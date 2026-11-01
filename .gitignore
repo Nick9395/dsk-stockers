@@ -1,0 +1,18 @@
+# ローカルの要件メモ。GitHub には上げない
+/memo/
+
+# 秘密情報
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+
+# 依存パッケージ（各アプリの .gitignore でも除外する）
+node_modules/
+vendor/bundle/
+
+# 実行時にできるファイル
+log/
+tmp/

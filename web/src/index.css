@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* アプリ名と、各ページの大項目に使う青。ログインなどの見出しには付けない。 */
+@theme {
+  --color-heading: #002850;
+}

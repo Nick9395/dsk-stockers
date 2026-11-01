@@ -1,0 +1,16 @@
+FROM ruby:4.0
+
+ENV LANG=C.UTF-8 \
+    TZ=Asia/Tokyo
+
+RUN apt-get update -qq && \
+    apt-get install -y --no-install-recommends \
+      build-essential \
+      git \
+      curl \
+      libpq-dev \
+      libyaml-dev \
+      postgresql-client && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
