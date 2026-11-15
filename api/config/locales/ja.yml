@@ -1,2 +1,36 @@
 ja:
   hello: "こんにちは"
+  devise:
+    mailer:
+      invitation_instructions:
+        subject: DSK Stockers の利用を開始してください
+      reset_password_instructions:
+        subject: DSK Stockers のパスワードを再設定してください
+      unlock_instructions:
+        subject: DSK Stockers のアカウントをロックしました
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              too_short:
+                full_message: パスワードは8文字以上にしてください
+              blank:
+                full_message: パスワードを入力してください
+              confirmation:
+                full_message: パスワード（確認）が一致しません
+            reset_password_token:
+              invalid:
+                full_message: この再設定リンクは無効です。もう一度メールの送信からやり直してください。
+              blank:
+                full_message: この再設定リンクは無効です。もう一度メールの送信からやり直してください。
+              expired:
+                full_message: この再設定リンクは無効です。もう一度メールの送信からやり直してください。
+            email:
+              taken:
+                full_message: このメールアドレスはすでに登録されています
+              blank:
+                full_message: メールアドレスを入力してください
+              invalid:
+                full_message: メールアドレスの形式を確認してください

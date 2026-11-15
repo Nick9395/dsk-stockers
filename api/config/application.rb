@@ -29,9 +29,15 @@ module Api
     config.i18n.default_locale = :ja
     config.i18n.available_locales = [:ja]
 
-    # Only loads a smaller set of middleware suitable for API only apps.
-    # Middleware like session, flash, cookies can be added back manually.
-    # Skip views, helpers and assets when generating a new resource.
+    # API モードでも、ログイン状態はクッキーセッションで持つ。
     config.api_only = true
+    config.session_store :cookie_store,
+      key: "_dsk_stockers_session",
+      same_site: :lax,
+      secure: Rails.env.production?,
+      httponly: true
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use config.session_store, config.session_options
+    config.middleware.use ActionDispatch::Flash
   end
 end
