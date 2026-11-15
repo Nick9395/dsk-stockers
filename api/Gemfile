@@ -34,8 +34,13 @@ gem "thruster", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"
 
-# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
-# gem "rack-cors"
+# 画面と API が別オリジンのとき、フロントのオリジンだけを許可する
+gem "rack-cors"
+
+# ログイン、招待、パスワード再設定。パスワードは bcrypt
+gem "devise", "~> 5.0.4"
+gem "devise_invitable", "~> 3.1.0"
+gem "devise-i18n"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
